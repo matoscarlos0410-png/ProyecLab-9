@@ -1,37 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="theme-color" content="#071c2c">
-  <meta name="description" content="ProyecLab: Sausal en un solo lugar. Descubre lugares, comida, servicios, educación, instituciones, transporte y cultura.">
+  <meta charset="utf-8">
 
-  <!-- ICONO OFICIAL DE PROYEC LAB -->
-  <link rel="icon" type="image/png" href="proyeclab-icon.png">
-  <link rel="apple-touch-icon" href="proyeclab-icon.png">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-  <title>ProyecLab | Sausal en un solo lugar</title>
+  <meta
+    name="theme-color"
+    content="#071c2c"
+  >
 
-  <link rel="stylesheet" href="style.css">
+  <meta
+    name="description"
+    content="ProyecLab: Sausal en un solo lugar"
+  >
+
+  <!-- =====================================
+       ICONO INTEGRADO EN EL PROPIO HTML
+       NO NECESITA ARCHIVO EXTERNO
+  ====================================== -->
+
+  <link
+    id="favicon"
+    rel="icon"
+    type="image/webp"
+  >
+
+  <link
+    id="appleIcon"
+    rel="apple-touch-icon"
+  >
+
+
+  <script>
+
+    /*
+      ICONO OFICIAL DE PROYEC LAB
+      Está integrado directamente en este HTML.
+    */
+
+    window.PROYEC_LAB_ICON =
+    "data:image/webp;base64,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";
+
+
+    /*
+      Activar icono y logotipo
+    */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        document.getElementById(
+          "favicon"
+        ).href =
+          window.PROYEC_LAB_ICON;
+
+
+        document.getElementById(
+          "appleIcon"
+        ).href =
+          window.PROYEC_LAB_ICON;
+
+
+        document
+          .querySelectorAll(
+            "[data-proyeclab-logo]"
+          )
+          .forEach(
+            element => {
+
+              element.src =
+                window.PROYEC_LAB_ICON;
+
+            }
+          );
+
+      }
+    );
+
+  </script>
+
+
+  <title>
+    ProyecLab | Sausal en un solo lugar
+  </title>
+
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
 
 <body>
 
-  <!-- FONDO -->
-  <div class="site-bg"></div>
-  <div class="particles" id="particles"></div>
 
-  <!-- =========================
-       BARRA DE NAVEGACIÓN
-  ========================== -->
-  <header class="topbar">
+  <!-- =====================================
+       FONDO
+  ====================================== -->
 
-    <a class="brand" href="#inicio" aria-label="ProyecLab inicio">
+  <div class="bg"></div>
+
+
+  <!-- =====================================
+       ENCABEZADO
+  ====================================== -->
+
+  <header>
+
+    <a
+      class="brand"
+      href="#inicio"
+    >
 
       <img
-        src="proyeclab-icon.png"
-        alt="Logo oficial de ProyecLab"
+        src=""
+        data-proyeclab-logo
+        alt="Icono de ProyecLab"
       >
 
       <span>
@@ -40,60 +133,93 @@
 
     </a>
 
+
     <button
-      class="menu-toggle"
-      id="menuToggle"
+      id="menu"
       aria-label="Abrir menú"
     >
       ☰
     </button>
 
-    <nav id="mainNav">
 
-      <a href="#inicio">Inicio</a>
-      <a href="#historia">Historia</a>
-      <a href="#categorias">Categorías</a>
-      <a href="#proyecto">Proyecto</a>
-      <a href="#fuentes">Fuentes</a>
+    <nav id="nav">
+
+      <a href="#inicio">
+        Inicio
+      </a>
+
+      <a href="#historia">
+        Historia
+      </a>
+
+      <a href="#categorias">
+        Categorías
+      </a>
+
+      <a href="#proyecto">
+        Proyecto
+      </a>
 
     </nav>
 
   </header>
 
 
+  <!-- =====================================
+       CONTENIDO PRINCIPAL
+  ====================================== -->
+
   <main>
 
-    <!-- =========================
+
+    <!-- =================================
          INICIO
-    ========================== -->
+    ================================== -->
 
-    <section class="hero" id="inicio">
+    <section
+      class="hero"
+      id="inicio"
+    >
 
-      <div class="hero-card">
+      <div>
 
         <img
           class="hero-logo"
-          src="proyeclab-icon.png"
-          alt="ProyecLab - Sausal en un solo lugar"
+          src=""
+          data-proyeclab-logo
+          alt="Logo de ProyecLab"
         >
+
 
         <p class="eyebrow">
           TIERRA DEL ETERNO SOL
         </p>
 
+
         <h1>
+
           Descubre, conecta y valora
-          <strong>Sausal</strong>.
+
+          <b>
+            Sausal
+          </b>
+
         </h1>
 
-        <p class="hero-text">
-          Una guía digital para conocer lugares,
-          servicios, educación, instituciones,
-          transporte, comida y cultura de nuestra comunidad.
+
+        <p>
+
+          Una guía digital para conocer
+          comida, servicios, educación,
+          lugares, instituciones,
+          transporte y cultura
+          de nuestra comunidad.
+
         </p>
 
+
         <a
-          class="primary-btn"
+          class="btn"
           href="#historia"
         >
           Conocer Sausal ↓
@@ -104,37 +230,32 @@
     </section>
 
 
-    <!-- =========================
-         HISTORIA DE SAUSAL
-    ========================== -->
+    <!-- =================================
+         HISTORIA
+    ================================== -->
 
     <section
-      class="section history"
+      class="section"
       id="historia"
     >
 
-      <div class="section-heading">
+      <div class="heading">
 
-        <span>01</span>
+        <small>
+          01 · NUESTRA COMUNIDAD
+        </small>
 
-        <div>
-
-          <p class="eyebrow">
-            NUESTRA COMUNIDAD
-          </p>
-
-          <h2>
-            Historia de Sausal
-          </h2>
-
-        </div>
+        <h2>
+          Historia de Sausal
+        </h2>
 
       </div>
 
 
-      <div class="history-grid">
+      <div class="history">
 
-        <article class="history-card featured">
+
+        <article>
 
           <h3>
             Un pueblo con historia,
@@ -143,89 +264,135 @@
 
 
           <p>
-            Sausal es un centro poblado del distrito
-            de Chicama, provincia de Ascope,
-            en La Libertad. Es conocido localmente
-            como <b>“Tierra del Eterno Sol”</b> y se
-            encuentra aproximadamente a 120 metros
-            sobre el nivel del mar.
+
+            Sausal es un centro poblado
+            del distrito de Chicama,
+            provincia de Ascope,
+            en La Libertad.
+
+            Es conocido localmente como
+            <b>
+              “Tierra del Eterno Sol”
+            </b>
+
+            y se encuentra aproximadamente
+            a 120 metros sobre el nivel
+            del mar.
+
           </p>
 
 
           <p>
-            Su desarrollo está relacionado con el
-            valle del río Chicama y con las actividades
-            agrícolas que durante generaciones han
-            formado parte de la vida de sus habitantes.
-            La agricultura, el comercio, actividades
-            avícolas y otras actividades vinculadas al
-            desarrollo agropecuario forman parte de
-            su dinámica económica.
+
+            Su desarrollo está relacionado
+            con el valle del río Chicama
+            y con las actividades agrícolas
+            que durante generaciones han
+            formado parte de la vida de
+            sus habitantes.
+
+            La agricultura, el comercio
+            y otras actividades productivas
+            forman parte de su dinámica local.
+
           </p>
 
 
           <p>
-            Sausal fue reconocido como centro poblado
-            en agosto de 1981. Desde entonces,
-            la comunidad ha continuado creciendo y
-            fortaleciendo sus espacios educativos,
-            sociales, comerciales y comunitarios.
+
+            Sausal fue reconocido como
+            centro poblado en agosto de
+            1981.
+
+            Con el paso de los años,
+            la comunidad ha continuado
+            desarrollando sus espacios
+            educativos, sociales,
+            comerciales y comunitarios.
+
           </p>
 
 
           <p>
-            La educación también ocupa un lugar
-            importante. La Institución Educativa
-            José Carlos Mariátegui fue creada el
-            17 de octubre de 1965 para atender a
-            estudiantes de Sausal y sus anexos,
-            formando parte de la historia educativa
-            de la comunidad.
+
+            La educación ocupa un lugar
+            importante.
+
+            La I.E. José Carlos Mariátegui
+            fue creada el 17 de octubre
+            de 1965 para atender a
+            estudiantes de Sausal y sus
+            anexos, formando parte de
+            la historia educativa de
+            la comunidad.
+
           </p>
 
 
           <p>
-            Las costumbres y celebraciones religiosas
-            también ayudan a conservar la identidad
-            local. Entre las festividades mencionadas
-            por fuentes locales se encuentran la
-            Virgen del Rosario, el Señor de los
-            Milagros y la Virgen de la Puerta.
+
+            Las costumbres y celebraciones
+            religiosas también ayudan a
+            conservar la identidad local.
+
+            Entre las festividades mencionadas
+            por fuentes locales están
+            la Virgen del Rosario,
+            el Señor de los Milagros
+            y la Virgen de la Puerta.
+
           </p>
 
 
           <p>
-            A lo largo de los años, Sausal también
-            ha afrontado dificultades relacionadas
-            con fenómenos naturales, infraestructura
-            y caminos. La participación de la comunidad
-            ha sido importante para recuperar espacios
-            y mantener sus actividades.
+
+            Sausal también ha afrontado
+            dificultades relacionadas con
+            fenómenos naturales e
+            infraestructura.
+
+            La organización de la comunidad
+            ha sido importante para mantener
+            sus actividades y recuperar
+            espacios.
+
           </p>
 
 
           <p>
-            Hoy, Sausal continúa construyendo su futuro.
-            Sus lugares públicos, instituciones,
-            negocios, centros educativos, actividades
-            agrícolas y tradiciones forman parte de una
-            identidad que ProyecLab busca organizar,
-            mostrar y valorar.
+
+            Hoy, sus lugares públicos,
+            instituciones, negocios,
+            centros educativos,
+            actividades productivas
+            y tradiciones forman parte
+            de una identidad que
+            <b>
+              ProyecLab busca mostrar
+              y valorar.
+            </b>
+
           </p>
 
         </article>
 
 
-        <aside class="facts-card">
+        <!-- DATOS -->
+
+        <aside>
 
           <h3>
             Sausal en datos
           </h3>
 
 
-          <div class="fact">
+          <div>
 
-            <b>📍 Ubicación</b>
+            📍
+
+            <b>
+              Ubicación
+            </b>
 
             <span>
               Chicama · Ascope · La Libertad
@@ -234,9 +401,13 @@
           </div>
 
 
-          <div class="fact">
+          <div>
 
-            <b>☀️ Identidad</b>
+            ☀️
+
+            <b>
+              Identidad
+            </b>
 
             <span>
               Tierra del Eterno Sol
@@ -245,9 +416,13 @@
           </div>
 
 
-          <div class="fact">
+          <div>
 
-            <b>🌱 Actividad</b>
+            🌱
+
+            <b>
+              Actividad
+            </b>
 
             <span>
               Agricultura y comercio local
@@ -256,24 +431,31 @@
           </div>
 
 
-          <div class="fact">
+          <div>
 
-            <b>🎓 Educación</b>
+            🎓
+
+            <b>
+              Educación
+            </b>
 
             <span>
-              Instituciones que forman parte
-              de la comunidad
+              Instituciones de la comunidad
             </span>
 
           </div>
 
 
-          <div class="fact">
+          <div>
 
-            <b>🎭 Cultura</b>
+            🎭
+
+            <b>
+              Cultura
+            </b>
 
             <span>
-              Tradiciones y celebraciones locales
+              Tradiciones y celebraciones
             </span>
 
           </div>
@@ -285,52 +467,52 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          CATEGORÍAS
-    ========================== -->
+    ================================== -->
 
     <section
-      class="section categories"
+      class="section"
       id="categorias"
     >
 
-      <div class="section-heading">
+      <div class="heading">
 
-        <span>02</span>
+        <small>
+          02 · EXPLORA
+        </small>
 
-        <div>
 
-          <p class="eyebrow">
-            EXPLORA
-          </p>
+        <h2>
+          Categorías de Sausal
+        </h2>
 
-          <h2>
-            Categorías de Sausal
-          </h2>
 
-          <p class="muted">
-            Cada categoría mantiene sus propios
-            lugares. No se mezclan.
-          </p>
+        <p>
 
-        </div>
+          Cada tarjeta contiene únicamente
+          los lugares de su respectiva
+          categoría.
+
+        </p>
 
       </div>
 
 
-      <div
-        class="category-menu"
-        id="categoryMenu"
-      >
+      <div class="cats">
+
+
+        <!-- COMIDA -->
 
         <button
-          class="category active"
-          data-category="comida"
+          data-cat="comida"
         >
 
-          <span>🍴</span>
+          🍴
 
-          <b>Comida</b>
+          <b>
+            Comida
+          </b>
 
           <small>
             Restaurantes y pollerías
@@ -339,14 +521,17 @@
         </button>
 
 
+        <!-- SERVICIOS -->
+
         <button
-          class="category"
-          data-category="servicios"
+          data-cat="servicios"
         >
 
-          <span>🛒</span>
+          🛒
 
-          <b>Servicios</b>
+          <b>
+            Servicios
+          </b>
 
           <small>
             Comercios y servicios
@@ -355,14 +540,17 @@
         </button>
 
 
+        <!-- EDUCACIÓN -->
+
         <button
-          class="category"
-          data-category="educacion"
+          data-cat="educacion"
         >
 
-          <span>🎓</span>
+          🎓
 
-          <b>Educación</b>
+          <b>
+            Educación
+          </b>
 
           <small>
             Colegios y jardines
@@ -371,14 +559,17 @@
         </button>
 
 
+        <!-- LUGARES -->
+
         <button
-          class="category"
-          data-category="lugares"
+          data-cat="lugares"
         >
 
-          <span>📍</span>
+          📍
 
-          <b>Lugares</b>
+          <b>
+            Lugares
+          </b>
 
           <small>
             Parques y espacios
@@ -387,30 +578,36 @@
         </button>
 
 
+        <!-- INSTITUCIONES -->
+
         <button
-          class="category"
-          data-category="instituciones"
+          data-cat="instituciones"
         >
 
-          <span>🏛️</span>
+          🏛️
 
-          <b>Instituciones</b>
+          <b>
+            Instituciones
+          </b>
 
           <small>
-            Entidades de la comunidad
+            Entidades locales
           </small>
 
         </button>
 
 
+        <!-- TRANSPORTE -->
+
         <button
-          class="category"
-          data-category="transporte"
+          data-cat="transporte"
         >
 
-          <span>🚌</span>
+          🚌
 
-          <b>Transporte</b>
+          <b>
+            Transporte
+          </b>
 
           <small>
             Terminales y colectivos
@@ -419,17 +616,20 @@
         </button>
 
 
+        <!-- CULTURA -->
+
         <button
-          class="category"
-          data-category="cultura"
+          data-cat="cultura"
         >
 
-          <span>🎭</span>
+          🎭
 
-          <b>Cultura</b>
+          <b>
+            Cultura
+          </b>
 
           <small>
-            Costumbres y tradiciones
+            Tradiciones y fiestas
           </small>
 
         </button>
@@ -439,46 +639,44 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          EXPLORADOR
-    ========================== -->
+    ================================== -->
 
-    <section class="section explorer">
+    <section
+      class="section explorer"
+    >
 
-      <div class="explorer-top">
+
+      <div class="explorer-head">
+
 
         <div>
 
-          <p class="eyebrow">
-            DIRECTORIO
-          </p>
+          <small id="label">
+            🍴 COMIDA
+          </small>
 
-          <h2 id="categoryTitle">
+
+          <h2 id="title">
             Comida
           </h2>
-
-          <p
-            id="categoryDescription"
-            class="muted"
-          >
-            Opciones de comida encontradas
-            para explorar.
-          </p>
 
         </div>
 
 
-        <div class="search-box">
+        <div class="search">
 
           <input
-            id="searchInput"
+            id="search"
             type="search"
-            placeholder="Buscar dentro de esta categoría..."
+            placeholder="Buscar en esta categoría..."
             autocomplete="off"
           >
 
+
           <button
-            id="clearSearch"
+            id="clear"
             type="button"
           >
             Limpiar
@@ -489,91 +687,50 @@
       </div>
 
 
+      <!-- AQUÍ APARECEN LAS TARJETAS -->
+
       <div
-        class="places-grid"
-        id="placesGrid"
+        id="grid"
+        class="grid"
       ></div>
 
 
       <p
-        class="no-results hidden"
-        id="noResults"
+        id="empty"
+        class="empty hidden"
       >
-        No encontramos resultados en esta categoría.
+        No hay resultados en esta categoría.
       </p>
 
     </section>
 
 
-    <!-- =========================
-         WHATSAPP
-    ========================== -->
-
-    <section class="section recommend">
-
-      <div class="recommend-card">
-
-        <div>
-
-          <p class="eyebrow">
-            ¿NO SABES A DÓNDE IR?
-          </p>
-
-          <h2>
-            Te recomiendo un lugar de Sausal
-          </h2>
-
-          <p>
-            Escríbeme por WhatsApp y puedo ayudarte
-            a elegir un lugar según lo que estés buscando.
-          </p>
-
-        </div>
-
-
-        <a
-          class="whatsapp-btn"
-          href="https://wa.me/51972372645?text=Hola%2C%20quiero%20que%20me%20recomiendes%20un%20lugar%20de%20Sausal."
-          target="_blank"
-          rel="noopener"
-        >
-          💬 Pedir recomendación
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
+    <!-- =================================
          PROYECTO EPT
-    ========================== -->
+    ================================== -->
 
     <section
-      class="section project"
+      class="section"
       id="proyecto"
     >
 
-      <div class="section-heading">
 
-        <span>03</span>
+      <div class="heading">
 
-        <div>
+        <small>
+          03 · EPT
+        </small>
 
-          <p class="eyebrow">
-            EPT · PROYECTO
-          </p>
 
-          <h2>
-            ¿Qué problema busca resolver?
-          </h2>
-
-        </div>
+        <h2>
+          El proyecto
+        </h2>
 
       </div>
 
 
-      <div class="project-grid">
+      <div class="project">
+
 
         <article>
 
@@ -581,15 +738,20 @@
             Problema
           </h3>
 
+
           <p>
-            En Sausal existe información dispersa
-            sobre lugares, servicios, negocios,
-            instituciones, actividades, costumbres
-            y atractivos de la comunidad. Esto
-            dificulta que habitantes y visitantes
-            encuentren rápidamente opciones y
-            conozcan mejor la historia e identidad
-            de la localidad.
+
+            En Sausal existe información
+            dispersa sobre lugares,
+            servicios, negocios,
+            instituciones, actividades,
+            costumbres y atractivos.
+
+            Esto dificulta encontrar
+            rápidamente opciones y conocer
+            mejor la historia e identidad
+            local.
+
           </p>
 
         </article>
@@ -601,12 +763,17 @@
             Solución
           </h3>
 
+
           <p>
-            ProyecLab organiza esta información
-            en un solo sitio web. Cada categoría
-            mantiene su información separada y
-            cada lugar puede llevar directamente
-            a su ubicación en Google Maps.
+
+            ProyecLab organiza esa
+            información en un solo sitio.
+
+            Las categorías están separadas
+            y cada lugar puede abrir
+            directamente su ubicación
+            en Google Maps.
+
           </p>
 
         </article>
@@ -616,42 +783,40 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          FUENTES
-    ========================== -->
+    ================================== -->
 
     <section
-      class="section sources"
-      id="fuentes"
+      class="section sources-section"
     >
 
-      <div class="section-heading">
 
-        <span>04</span>
+      <div class="heading">
 
-        <div>
+        <small>
+          04 · FUENTES
+        </small>
 
-          <p class="eyebrow">
-            TRANSPARENCIA
-          </p>
 
-          <h2>
-            Fuentes de información
-          </h2>
-
-        </div>
+        <h2>
+          Información consultada
+        </h2>
 
       </div>
 
 
-      <div class="source-list">
+      <div class="sources">
+
 
         <a
           href="https://iejcm.edu.pe/"
           target="_blank"
           rel="noopener"
         >
-          I.E. José Carlos Mariátegui de Sausal
+
+          I.E. José Carlos Mariátegui
+
         </a>
 
 
@@ -660,7 +825,10 @@
           target="_blank"
           rel="noopener"
         >
-          I.E. José Carlos Mariátegui · Quiénes somos
+
+          I.E. José Carlos Mariátegui
+          · Quiénes somos
+
         </a>
 
 
@@ -669,16 +837,22 @@
           target="_blank"
           rel="noopener"
         >
-          Congreso de la República · información sobre Sausal
+
+          Congreso
+          · información sobre Sausal
+
         </a>
 
 
         <a
-          href="https://www.gob.pe/institucion/rcc/noticias/865370-la-libertad-rehabilitacion-del-canal-salinar-quemazon-registra-avance-fisico-del-77"
+          href="https://www.gob.pe/"
           target="_blank"
           rel="noopener"
         >
-          Gob.pe · infraestructura de riego en Sausal
+
+          Gob.pe
+          · información pública
+
         </a>
 
       </div>
@@ -688,55 +862,57 @@
   </main>
 
 
-  <!-- =========================
+  <!-- =================================
+       WHATSAPP FLOTANTE
+  ================================== -->
+
+  <a
+    class="wa"
+    href="https://wa.me/51972372645?text=Hola%2C%20quiero%20que%20me%20recomiendes%20un%20lugar%20de%20Sausal."
+    target="_blank"
+    rel="noopener"
+    aria-label="Contactar por WhatsApp"
+  >
+
+    💬
+
+  </a>
+
+
+  <!-- =================================
        PIE DE PÁGINA
-  ========================== -->
+  ================================== -->
 
   <footer>
 
-    <div class="footer-brand">
 
-      <img
-        src="proyeclab-icon.png"
-        alt="ProyecLab"
-      >
-
-      <div>
-
-        <strong>
-          ProyecLab
-        </strong>
-
-        <span>
-          Sausal en un solo lugar
-        </span>
-
-      </div>
-
-    </div>
+    <img
+      src=""
+      data-proyeclab-logo
+      alt="ProyecLab"
+    >
 
 
-    <p>
-      Proyecto EPT · Descubre, conecta y valora Sausal.
-    </p>
+    <b>
+      ProyecLab
+    </b>
+
+
+    <span>
+      Sausal en un solo lugar
+    </span>
+
 
   </footer>
 
 
-  <!-- WHATSAPP FLOTANTE -->
-
-  <a
-    class="floating-wa"
-    href="https://wa.me/51972372645?text=Hola%2C%20quiero%20que%20me%20recomiendes%20un%20lugar%20de%20Sausal."
-    target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp"
-  >
-    💬
-  </a>
-
+  <!-- =================================
+       JAVASCRIPT PRINCIPAL
+  ================================== -->
 
   <script src="script.js"></script>
 
+
 </body>
+
 </html>
