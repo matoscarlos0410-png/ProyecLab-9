@@ -1,0 +1,1183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy: #071c2c;
+  --navy2: #0c2b40;
+  --green: #079b58;
+  --green2: #13bd70;
+  --gold: #f6bd32;
+  --white: #ffffff;
+  --soft: #eef5f3;
+  --text: #102333;
+  --muted: #60717b;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+  --radius: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  color: var(--text);
+  background: #071c2c;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   FONDO GENERAL
+========================= */
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 19, 29, 0.48),
+      rgba(3, 19, 29, 0.76)
+    ),
+    url("sausal.jpg")
+    center / cover no-repeat;
+
+  z-index: -3;
+
+  transform: scale(1.03);
+}
+
+.site-bg::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 24, 38, 0.12),
+      rgba(4, 24, 38, 0.78)
+    );
+}
+
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+.particles {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  animation:
+    float 9s linear infinite;
+}
+
+@keyframes float {
+
+  0% {
+    transform:
+      translateY(105vh)
+      translateX(0);
+
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform:
+      translateY(-15vh)
+      translateX(80px);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================
+   BARRA SUPERIOR
+========================= */
+
+.topbar {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 20;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding:
+    12px
+    clamp(16px, 4vw, 60px);
+
+  background:
+    rgba(4, 24, 38, 0.88);
+
+  backdrop-filter: blur(16px);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================
+   LOGO / MARCA
+========================= */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-weight: 900;
+
+  font-size: 1.25rem;
+}
+
+.brand img {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  background: #fff;
+}
+
+.brand span span {
+  color: #19c871;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+nav {
+  display: flex;
+
+  gap: 8px;
+
+  align-items: center;
+}
+
+nav a {
+  color: #fff;
+
+  text-decoration: none;
+
+  padding: 10px 14px;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  font-size: 0.94rem;
+
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+
+/* BOTÓN MENÚ */
+
+.menu-toggle {
+  display: none;
+
+  border: 0;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  color: #fff;
+
+  border-radius: 12px;
+
+  padding: 9px 12px;
+
+  font-size: 1.25rem;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+main {
+  min-height: 100vh;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height:
+    calc(100vh - 70px);
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 60px 20px;
+}
+
+.hero-card {
+  max-width: 920px;
+
+  text-align: center;
+
+  color: #fff;
+
+  padding: 34px;
+}
+
+.hero-logo {
+  width:
+    min(330px, 75vw);
+
+  aspect-ratio: 1;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 22px 70px
+    rgba(0, 0, 0, 0.35);
+
+  background: #fff;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+.eyebrow {
+  font-size: 0.78rem;
+
+  letter-spacing: 0.18em;
+
+  font-weight: 900;
+
+  color: var(--gold);
+
+  margin-bottom: 7px;
+}
+
+.hero h1 {
+  font-size:
+    clamp(2.2rem, 6vw, 5rem);
+
+  line-height: 1.05;
+
+  margin:
+    8px 0 18px;
+
+  text-shadow:
+    0 8px 30px
+    rgba(0, 0, 0, 0.35);
+}
+
+.hero h1 strong {
+  color: #21d27b;
+}
+
+.hero-text {
+  max-width: 720px;
+
+  margin: auto;
+
+  font-size: 1.1rem;
+
+  color: #eaf5f2;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.primary-btn,
+.whatsapp-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 25px;
+
+  padding:
+    13px 20px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-weight: 900;
+
+  transition: 0.25s;
+}
+
+.primary-btn {
+  background:
+    var(--green2);
+
+  color: #06251a;
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.25);
+}
+
+.primary-btn:hover,
+.whatsapp-btn:hover {
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section {
+  width:
+    min(1180px, 92%);
+
+  margin:
+    0 auto;
+
+  padding:
+    82px 0;
+}
+
+.section-heading {
+  display: flex;
+
+  gap: 18px;
+
+  align-items: flex-start;
+
+  margin-bottom: 30px;
+
+  color: #fff;
+}
+
+.section-heading > span {
+  font-size: 1rem;
+
+  font-weight: 900;
+
+  color: var(--gold);
+
+  padding-top: 6px;
+}
+
+.section-heading h2 {
+  font-size:
+    clamp(1.9rem, 4vw, 3rem);
+
+  line-height: 1.1;
+}
+
+.muted {
+  color: #d9e5e2;
+
+  margin-top: 5px;
+}
+
+
+/* =========================
+   HISTORIA
+========================= */
+
+.history-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.7fr 0.8fr;
+
+  gap: 22px;
+}
+
+.history-card,
+.facts-card,
+.project-grid article,
+.recommend-card {
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.65);
+
+  border-radius:
+    var(--radius);
+
+  box-shadow:
+    var(--shadow);
+}
+
+.history-card {
+  padding: 32px;
+}
+
+.history-card h3 {
+  font-size: 1.55rem;
+
+  margin-bottom: 15px;
+
+  color: var(--navy);
+}
+
+.history-card p {
+  margin-bottom: 14px;
+
+  color: #344953;
+}
+
+.facts-card {
+  padding: 25px;
+
+  height: max-content;
+
+  position: sticky;
+
+  top: 95px;
+}
+
+.facts-card h3 {
+  margin-bottom: 15px;
+
+  color: var(--navy);
+
+  font-size: 1.3rem;
+}
+
+.fact {
+  padding: 13px 0;
+
+  border-bottom:
+    1px solid #dce7e4;
+
+  display: grid;
+
+  gap: 2px;
+}
+
+.fact:last-child {
+  border-bottom: 0;
+}
+
+.fact span {
+  color: var(--muted);
+
+  font-size: 0.92rem;
+}
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.category-menu {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  gap: 12px;
+}
+
+.category {
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 20px;
+
+  padding: 18px 10px;
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  min-height: 145px;
+
+  transition: 0.25s;
+
+  color: var(--navy);
+}
+
+.category span {
+  font-size: 2rem;
+}
+
+.category b {
+  font-size: 0.96rem;
+}
+
+.category small {
+  font-size: 0.72rem;
+
+  color: var(--muted);
+
+  line-height: 1.25;
+
+  text-align: center;
+}
+
+.category:hover {
+  transform:
+    translateY(-5px);
+}
+
+.category.active {
+  background:
+    linear-gradient(
+      145deg,
+      #fff,
+      #dff8ec
+    );
+
+  outline:
+    3px solid
+    var(--green2);
+
+  transform:
+    translateY(-5px);
+}
+
+
+/* =========================
+   EXPLORADOR
+========================= */
+
+.explorer {
+  padding-top: 15px;
+}
+
+.explorer-top {
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 25px;
+
+  color: #fff;
+}
+
+.explorer-top h2 {
+  font-size:
+    clamp(1.9rem, 4vw, 3rem);
+}
+
+
+/* BUSCADOR */
+
+.search-box {
+  display: flex;
+
+  gap: 8px;
+}
+
+.search-box input {
+  width:
+    min(360px, 55vw);
+
+  padding:
+    13px 16px;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  outline: 0;
+
+  font-size: 0.95rem;
+}
+
+.search-box button {
+  border: 0;
+
+  border-radius: 14px;
+
+  padding:
+    0 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  background: #fff;
+
+  color: var(--navy);
+}
+
+
+/* =========================
+   TARJETAS DE LUGARES
+========================= */
+
+.places-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.place-card {
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow:
+    var(--shadow);
+
+  display: flex;
+
+  flex-direction: column;
+
+  transition: 0.25s;
+}
+
+.place-card:hover {
+  transform:
+    translateY(-6px);
+}
+
+.place-head {
+  padding:
+    22px 22px 8px;
+}
+
+.place-icon {
+  font-size: 2.1rem;
+}
+
+.place-card h3 {
+  color: var(--navy);
+
+  margin:
+    5px 0;
+}
+
+.place-type {
+  color: var(--green);
+
+  font-weight: 900;
+
+  font-size: 0.8rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+}
+
+.place-body {
+  padding:
+    0 22px 20px;
+
+  color: #4c5e67;
+
+  flex: 1;
+}
+
+.place-body p {
+  margin: 8px 0;
+}
+
+.place-actions {
+  display: flex;
+
+  gap: 8px;
+
+  padding:
+    0 22px 22px;
+}
+
+.map-btn {
+  flex: 1;
+
+  text-align: center;
+
+  background:
+    var(--navy);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  padding: 11px;
+
+  border-radius: 12px;
+
+  font-weight: 800;
+}
+
+.info-btn {
+  border: 0;
+
+  background:
+    #e8f3ef;
+
+  color:
+    #075b39;
+
+  padding:
+    11px 12px;
+
+  border-radius: 12px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.note {
+  font-size: 0.78rem !important;
+
+  background:
+    #fff7df;
+
+  border-radius: 10px;
+
+  padding: 8px;
+
+  color:
+    #795c11 !important;
+}
+
+.no-results {
+  color: #fff;
+
+  background:
+    rgba(255, 255, 255, 0.13);
+
+  padding: 18px;
+
+  border-radius: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.recommend-card {
+  padding: 30px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+.recommend-card h2 {
+  font-size:
+    clamp(1.6rem, 4vw, 2.5rem);
+
+  color: var(--navy);
+}
+
+.recommend-card p:not(.eyebrow) {
+  color: var(--muted);
+
+  max-width: 700px;
+}
+
+.whatsapp-btn {
+  background:
+    #20c76b;
+
+  color:
+    #052919;
+
+  margin-top: 0;
+}
+
+
+/* =========================
+   PROYECTO
+========================= */
+
+.project-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 20px;
+}
+
+.project-grid article {
+  padding: 28px;
+}
+
+.project-grid h3 {
+  color: var(--green);
+
+  font-size: 1.3rem;
+
+  margin-bottom: 8px;
+}
+
+.project-grid p {
+  color: #40545d;
+}
+
+
+/* =========================
+   FUENTES
+========================= */
+
+.source-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+.source-list a {
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  color: var(--navy);
+
+  padding:
+    17px 20px;
+
+  border-radius: 15px;
+
+  text-decoration: none;
+
+  font-weight: 750;
+
+  transition: 0.2s;
+}
+
+.source-list a:hover {
+  outline:
+    2px solid
+    var(--green2);
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
+footer {
+  background:
+    rgba(3, 17, 27, 0.95);
+
+  color: #dceae6;
+
+  padding:
+    28px max(4%, 40px);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  align-items: center;
+}
+
+.footer-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.footer-brand img {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  background: #fff;
+}
+
+.footer-brand div {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.footer-brand strong {
+  font-size: 1.15rem;
+}
+
+.footer-brand span {
+  font-size: 0.8rem;
+
+  color: #9fb5af;
+}
+
+
+/* =========================
+   WHATSAPP FLOTANTE
+========================= */
+
+.floating-wa {
+  position: fixed;
+
+  right: 22px;
+
+  bottom: 22px;
+
+  width: 58px;
+
+  height: 58px;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  background:
+    #20c76b;
+
+  color:
+    #052919;
+
+  text-decoration: none;
+
+  font-size: 1.55rem;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.35);
+
+  z-index: 30;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+
+  .category-menu {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+  .places-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 760px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+
+    top: 70px;
+
+    left: 0;
+
+    right: 0;
+
+    display: none;
+
+    flex-direction: column;
+
+    background:
+      rgba(4, 24, 38, 0.98);
+
+    padding:
+      12px 18px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding:
+      45px 15px 70px;
+  }
+
+  .history-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facts-card {
+    position: static;
+  }
+
+  .category-menu {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .places-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explorer-top {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .recommend-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
+
+@media (max-width: 420px) {
+
+  .category {
+    min-height: 130px;
+  }
+
+  .hero-logo {
+    width: 250px;
+  }
+
+  .section {
+    padding:
+      60px 0;
+  }
+
+  .history-card {
+    padding: 22px;
+  }
+
+}
